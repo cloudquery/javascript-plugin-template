@@ -86,7 +86,7 @@ export const newSamplePlugin = () => {
     { noConnection },
   ) => {
     pluginClient.spec = parseSpec(spec);
-    pluginClient.client = { id: () => "text-file" };
+    pluginClient.client = { id: () => "cq-js-sample" };
     if (noConnection) {
       pluginClient.allTables = [];
       return pluginClient;
@@ -96,6 +96,6 @@ export const newSamplePlugin = () => {
     return pluginClient;
   };
 
-  pluginClient.plugin = newPlugin("text-file", version, newClient);
+  pluginClient.plugin = newPlugin("cq-js-sample", version, newClient);
   return pluginClient.plugin;
 };
