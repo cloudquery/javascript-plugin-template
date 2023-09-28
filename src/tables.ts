@@ -3,7 +3,8 @@
 import fs from "node:fs/promises";
 import Path from "node:path";
 
-import { Utf8 } from "@cloudquery/plugin-sdk-javascript/arrow";
+import type { DataType } from "@cloudquery/plugin-sdk-javascript/arrow";
+import { Utf8, Int64, Float64 } from "@cloudquery/plugin-sdk-javascript/arrow";
 import type {
   Column,
   ColumnResolver,
@@ -39,6 +40,17 @@ const getColumnResolver = (c: string): ColumnResolver => {
   };
 };
 
+const getColumnType = (value: string): DataType => {
+  const number = Number(value);
+  if(Number.isNaN(number)) return new Utf8();
+  if(Number.isInteger(number)) return new Int64();
+  return new Float64();
+};
+
+const getColumnTypes = (row: string[]): DataType[] => {
+  return row.map((value)=>getColumnType(value));
+};
+
 const getTable = async (
   rows: string[][],
   tableName: string,
@@ -48,17 +60,18 @@ const getTable = async (
   }
   const columnNames = rows[0];
   const getRecordObjectFromRow = (row: string[]) => {
-    const record: Record<string, string> = {};
+    const record: Record<string, string | number> = {};
     for (const [index, element] of row.entries()) {
-      record[columnNames[index]] = element;
+      record[columnNames[index]] = Number.isNaN(Number(element)) ? element : Number(element);
     }
     return record;
   };
+  const columnTypes = rows.length > 1 ? getColumnTypes(rows[1]) : rows[0].map(()=>new Utf8());
   // convert all rows except column definitions to an array of Record<string, string> objects
   const tableRecords = rows.filter((_, index) => index > 0).map((r)=>getRecordObjectFromRow(r));
-  const columnDefinitions: Column[] = columnNames.map((c) => ({
+  const columnDefinitions: Column[] = columnNames.map((c, index) => ({
     name: c,
-    type: new Utf8(),
+    type: columnTypes[index],
     description: "",
     primaryKey: false,
     notNull: false,
