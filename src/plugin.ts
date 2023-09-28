@@ -91,7 +91,7 @@ export const newSamplePlugin = () => {
       pluginClient.allTables = [];
       return pluginClient;
     }
-    pluginClient.allTables = await getTables();
+    pluginClient.allTables = await getTables(logger, pluginClient.spec);
 
     return pluginClient;
   };

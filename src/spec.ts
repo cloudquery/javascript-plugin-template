@@ -5,7 +5,10 @@ const spec = {
   type: "object",
   properties: {
     concurrency: { type: "integer" },
+    path: { type: "string" },
+    csvDelimiter: {type: "string" },
   },
+  required: ["path"],
 };
 
 const ajv = new Ajv.default();
@@ -13,6 +16,8 @@ const validate = ajv.compile(spec);
 
 export type Spec = {
   concurrency: number;
+  path: string;
+  csvDelimiter: string;
 };
 
 export const parseSpec = (spec: string): Spec => {
@@ -23,6 +28,8 @@ export const parseSpec = (spec: string): Spec => {
   }
   const {
     concurrency = 10_000,
+    path = "",
+    csvDelimiter = ",",
   } = camelcaseKeys(parsed);
-  return { concurrency };
+  return { concurrency, path, csvDelimiter };
 };
