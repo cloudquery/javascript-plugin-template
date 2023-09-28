@@ -1,7 +1,25 @@
 # CloudQuery JS Source Plugin Template
 
-This is a template for a CloudQuery Source plugin using [CloudQuery JavaScript SDK](https://github.com/cloudquery/plugin-sdk-javascript).
-It creates a simple table called `Names` with two rows of data.
+This is a finished example of a CloudQuery source plugin using [CloudQuery JavaScript SDK](https://github.com/cloudquery/plugin-sdk-javascript).
+It loads CSV files and stores them in the designated destination.
+
+Example spec (using a locally built container):
+
+```yaml
+kind: source
+spec:
+  name: "cq-js-sample"
+  registry: "docker"
+  path: "cq-js-sample:latest"
+  version: "v1.0.0"
+  tables:
+    ["*"]
+  destinations:
+    - "sqlite"
+  spec:
+    path: "test_data" # path to the directory with CSV files
+    csvDelimiter: "," # CSV delimiter character. Optional, defaults to ","
+```
 
 ## Getting started
 
