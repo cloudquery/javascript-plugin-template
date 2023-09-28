@@ -27,6 +27,7 @@
   "scripts": {
     "dev": "ts-node --esm src/main.ts serve",
     "build": "rm -rf dist && tsc",
+    "package:container":"docker build -t cq-js-sample:latest .",
     "format": "prettier --write 'src/**/*.ts'",
     "format:check": "prettier --check 'src/**/*.ts'",
     "lint": "eslint --max-warnings 0 --ext .ts src",
