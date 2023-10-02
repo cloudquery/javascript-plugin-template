@@ -3,6 +3,8 @@
 This is a template for a CloudQuery Source plugin using [CloudQuery JavaScript SDK](https://github.com/cloudquery/plugin-sdk-javascript).
 It creates a simple table called `Names` with two rows of data.
 
+Read about how to build a new CloudQuery plugin from this template in [Creating a New JS Plugin](https://www.cloudquery.io/blog/creating-a-new-js-plugin).
+
 ## Getting started
 
 Install dependencies
