@@ -96,6 +96,10 @@ export const newSamplePlugin = () => {
     return pluginClient;
   };
 
-  pluginClient.plugin = newPlugin("cq-js-sample", version, newClient);
+  pluginClient.plugin = newPlugin("cq-js-sample", version, newClient, {
+    kind: "source",
+    team: "cloudquery",
+  });
+
   return pluginClient.plugin;
 };
