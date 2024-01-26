@@ -27,7 +27,7 @@
   "scripts": {
     "dev": "ts-node --esm src/main.ts serve",
     "build": "rm -rf dist && tsc",
-    "package:container":"docker build -t cq-js-sample:latest .",
+    "package:container": "docker build -t cq-js-sample:latest .",
     "format": "prettier --write 'src/**/*.ts'",
     "format:check": "prettier --check 'src/**/*.ts'",
     "lint": "eslint --max-warnings 0 --ext .ts src",
@@ -77,7 +77,7 @@
     "node": ">=18.17.0"
   },
   "dependencies": {
-    "@cloudquery/plugin-sdk-javascript": "^0.0.4",
+    "@cloudquery/plugin-sdk-javascript": "^0.1.4",
     "ajv": "^8.12.0",
     "camelcase-keys": "^8.0.2",
     "change-case": "^4.1.2",
