@@ -85,12 +85,12 @@ export const newSamplePlugin = () => {
     spec,
     { noConnection },
   ) => {
-    pluginClient.spec = parseSpec(spec);
-    pluginClient.client = { id: () => "cq-js-sample" };
     if (noConnection) {
       pluginClient.allTables = [];
       return pluginClient;
     }
+    pluginClient.spec = parseSpec(spec);
+    pluginClient.client = { id: () => "cq-js-sample" };
     pluginClient.allTables = await getTables();
 
     return pluginClient;

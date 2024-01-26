@@ -2,10 +2,8 @@ kind: source
 spec:
   name: "cq-js-sample"
   registry: "docker"
-  path: "cq-js-sample:latest"
-  version: "v1.0.0"
-  tables:
-    ["*"]
+  path: "docker.cloudquery.io/cloudquery/source-cq-js-sample:v0.0.1-linux-arm64"
+  tables: ["*"]
   destinations:
     - "sqlite"
   spec: {}
