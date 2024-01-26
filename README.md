@@ -29,11 +29,9 @@ This will create db.sql file (a Sqlite database) with a table `Names` and two re
 
 ## Building and publishing the plugin
 
-Use the following command to build a container with the plugin:
+1. Update the plugin metadata in [src/plugins.ts](src/plugin.ts#L99) to match your team and plugin name.
+2. Run `npm run build` to build the plugin.
+3. Run `node dist/main.js package -m "Initial release" v0.0.1 .`. `-m` specifies changelog and `v0.0.1` is the version.
+4. Run `cloudquery plugin publish -f` to publish the plugin to the CloudQuery registry.
 
-```shell
-npm run package:container
-```
-
-Check out the [Releasing and Deploying Your Plugin
-](https://www.cloudquery.io/docs/developers/creating-new-plugin/javascript-source#releasing-and-deploying-your-plugin) in our documentation to learn more about publishing your own plugin for wider use.
+> More about publishing plugins [here](https://docs.cloudquery.io/docs/developers/publishing-an-addon-to-the-hub)
