@@ -4,16 +4,17 @@ spec:
   registry: "grpc"
   path: "localhost:7777"
   version: "v1.0.0"
-  tables:
-    ["*"]
+  tables: ["*"]
   destinations:
     - "sqlite"
-  spec: {}
+  spec:
+    concurrency: 100
+    example_property: "value"
 ---
 kind: destination
 spec:
   name: sqlite
   path: cloudquery/sqlite
-  version: "v2.4.9"
+  version: "v2.13.1"
   spec:
     connection_string: ./db.sql
