@@ -15,7 +15,6 @@ import localizedFormat from "dayjs/plugin/localizedFormat.js";
 import timezone from "dayjs/plugin/timezone.js";
 import utc from "dayjs/plugin/utc.js";
 
-
 /* eslint-disable import/no-named-as-default-member */
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -32,9 +31,11 @@ const getColumnResolver = (c: string): ColumnResolver => {
 
 // eslint-disable-next-line @typescript-eslint/require-await
 const getTable = async (): Promise<Table> => {
-  
   const columnNames = ["First Name", "Last Name"];
-  const tableRecords = [{"First Name": "Jack", "Last Name": "Bauer"}, {"First Name": "Thomas", "Last Name": "Kirkman"}]
+  const tableRecords = [
+    { "First Name": "Jack", "Last Name": "Bauer" },
+    { "First Name": "Thomas", "Last Name": "Kirkman" },
+  ];
   const columnDefinitions: Column[] = columnNames.map((c) => ({
     name: c,
     type: new Utf8(),
@@ -48,15 +49,17 @@ const getTable = async (): Promise<Table> => {
   }));
 
   const tableResolver: TableResolver = (clientMeta, parent, stream) => {
-    for (const r of tableRecords) stream.write(r)
+    for (const r of tableRecords) stream.write(r);
     return Promise.resolve();
   };
-  return createTable({ name: "Names", columns: columnDefinitions, resolver: tableResolver });
+  return createTable({
+    name: "Names",
+    columns: columnDefinitions,
+    resolver: tableResolver,
+  });
 };
 
-export const getTables = async (
-): Promise<Table[]> => {
- 
+export const getTables = async (): Promise<Table[]> => {
   const table = await getTable();
   return [table];
 };
