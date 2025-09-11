@@ -47,7 +47,7 @@
     "@ava/typescript": "^6.0.0",
     "@tsconfig/node16": "^16.1.0",
     "@types/jest": "^29.5.4",
-    "@types/uuid": "^9.0.2",
+    "@types/uuid": "^10.0.0",
     "@types/yargs": "^17.0.24",
     "@typescript-eslint/eslint-plugin": "^6.2.1",
     "@typescript-eslint/parser": "^6.2.1",
@@ -70,7 +70,7 @@
     "tempy": "^3.1.0",
     "ts-jest": "^29.1.1",
     "tsx": "^3.12.10",
-    "typescript": "^4.9.5",
+    "typescript": "^5.0.0",
     "winston": "^3.10.0"
   },
   "engines": {
@@ -84,7 +84,7 @@
     "dayjs": "^1.11.9",
     "dot-prop": "^8.0.2",
     "got": "^13.0.0",
-    "p-map": "^6.0.0",
+    "p-map": "^7.0.0",
     "read-pkg-up": "^10.0.0"
   },
   "ava": {
