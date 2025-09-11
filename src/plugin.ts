@@ -11,7 +11,7 @@ import {
 import { sync } from "@cloudquery/plugin-sdk-javascript/scheduler";
 import type { Table } from "@cloudquery/plugin-sdk-javascript/schema/table";
 import { filterTables } from "@cloudquery/plugin-sdk-javascript/schema/table";
-import { readPackageUp } from "read-pkg-up";
+import { readPackageUp } from "read-package-up";
 
 import { parseSpec } from "./spec.js";
 import type { Spec } from "./spec.js";
