@@ -47,7 +47,7 @@
     "@ava/typescript": "^6.0.0",
     "@tsconfig/node16": "^16.1.0",
     "@types/jest": "^30.0.0",
-    "@types/uuid": "^10.0.0",
+    "@types/uuid": "^11.0.0",
     "@types/yargs": "^17.0.24",
     "@typescript-eslint/eslint-plugin": "^6.2.1",
     "@typescript-eslint/parser": "^6.2.1",
@@ -79,7 +79,7 @@
   "dependencies": {
     "@cloudquery/plugin-sdk-javascript": "^0.1.4",
     "ajv": "^8.12.0",
-    "camelcase-keys": "^9.0.0",
+    "camelcase-keys": "^10.0.0",
     "change-case": "^5.0.0",
     "dayjs": "^1.11.9",
     "dot-prop": "^10.0.0",
