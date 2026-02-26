@@ -94,5 +94,8 @@
       },
       "compile": "tsc"
     }
+  },
+  "overrides": {
+    "@vercel/nft": "1.3.2"
   }
 }
