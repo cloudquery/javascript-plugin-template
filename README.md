@@ -10,13 +10,13 @@ Read about how to build a new CloudQuery plugin from this template in [Creating 
 Install dependencies
 
 ```shell
-npm install
+pnpm install
 ```
 
 Run the plugin locally
 
 ```shell
-npm run dev
+pnpm dev
 ```
 
 Run cloudquery
@@ -30,7 +30,7 @@ This will create db.sql file (a Sqlite database) with a table `Names` and two re
 ## Building and publishing the plugin
 
 1. Update the plugin metadata in [src/plugins.ts](src/plugin.ts#L99) to match your team and plugin name.
-2. Run `npm run build` to build the plugin.
+2. Run `pnpm build` to build the plugin.
 3. Run `node dist/main.js package -m "Initial release" v0.0.1 .`. `-m` specifies changelog and `v0.0.1` is the version.
 4. Run `cloudquery plugin publish -f` to publish the plugin to the CloudQuery registry.
 
