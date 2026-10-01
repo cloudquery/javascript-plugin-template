@@ -3,6 +3,7 @@ blockExoticSubdeps: true
 minimumReleaseAge: 10080 # 7 days
 
 allowBuilds:
+  '@parcel/watcher': false
   esbuild: true
   protobufjs: true
   unrs-resolver: true
