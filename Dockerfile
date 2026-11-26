@@ -1,4 +1,4 @@
-FROM node:26.13.0-slim AS builder
+FROM node:26.13.1-slim AS builder
 
 RUN npm install -g pnpm@12.15.0
 
@@ -12,7 +12,7 @@ COPY . .
 
 RUN pnpm run build
 
-FROM node:26.13.0-slim AS final
+FROM node:26.13.1-slim AS final
 
 RUN npm install -g pnpm@12.15.0
 
